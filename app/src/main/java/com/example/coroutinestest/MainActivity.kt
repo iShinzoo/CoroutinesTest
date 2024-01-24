@@ -2,9 +2,13 @@ package com.example.coroutinestest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings.Global
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,9 +29,12 @@ class MainActivity : AppCompatActivity() {
 
         startTask.setOnClickListener(){
             //starts show long running task which potentially blocks the ui
-            for (i in 0..10000000){
-                Log.i("okay",i.toString())
+            GlobalScope.launch(Dispatchers.IO) {
+                for (i in 0..10000000){
+                    Log.i("okay",i.toString())
+                } // using coroutines to solve the problem
             }
+
         }
     }
 }
