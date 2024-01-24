@@ -6,13 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/showMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Show Message"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/StartTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    Start Task    "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
